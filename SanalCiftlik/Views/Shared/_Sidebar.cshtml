@@ -1,0 +1,47 @@
+﻿@using WebHelpers.Mvc5
+<aside class="main-sidebar">
+    <section class="sidebar">
+        @* BEGIN Search *@
+        <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Ara...">
+                <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+        <ul class="sidebar-menu" data-widget="tree">
+            <li  class="@Url.IsLinkActive("Index", "Home")">
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-link"></i> <span>Deneme Sayfası</span></a>
+            </li>
+            <li class="@Url.IsLinkActive("MainPage", "Home")">
+                <a id="aDenemeSayfasi" href="#Ciftligim" @*href="@Url.Action("MainPage", "Home")"*@><i class="fa fa-link"></i> <span>Çiftliğim</span></a>
+            </li>
+            @*<li>
+                <ul class="treeview-menu">
+                    <li><a href="@Url.Action("Animals", "Home")">Hayvanlar</a></li>
+                    <li><a href="@Url.Action("Feeds", "Home")">Yem</a></li>
+                    <li><a href="@Url.Action("Store", "Home")">Depo</a></li>
+                </ul>
+            </li>*@
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-link"></i> <span>Mağaza</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Url.IsLinkActive("Animals", "Home")"><a id="aHayvanlar" href="#Hayvanlar")">Hayvan Bilgisi</a></li>
+                    <li class="@Url.IsLinkActive("Store", "Home")"><a id="aDepo" href="@Url.Action("Store", "Home")">Depo Bilgisi</a></li>
+                    <li class="@Url.IsLinkActive("Feeds", "Home")"><a id="aYem" href="@Url.Action("Feeds", "Home")">Yem Bilgisi</a></li>
+                </ul>
+            </li>
+            <li class="@Url.IsLinkActive("MyAccount", "Home")">
+                <a href="@Url.Action("MyAccount", "Home")"><i class="fa fa-link"></i> <span>Hesabım</span></a>
+            </li>
+        </ul>
+    </section>
+</aside>
